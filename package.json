@@ -1,0 +1,61 @@
+{
+  "name": "react-slotted",
+  "version": "0.1.0",
+  "description": "React implementaion of slots",
+  "main": "lib/index.js",
+  "repository": "https://github.com/dmiller9911/react-slots.git",
+  "author": "Doug Miller <doug@dougmiller.io>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^15.4.2"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "@types/react": "^15.0.4",
+    "babel-cli": "^6.22.2",
+    "babel-jest": "^18.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "enzyme": "^2.7.1",
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb": "latest",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "git-directory-deploy": "^1.5.1",
+    "jest": "^18.1.0",
+    "markdown-to-react-components": "^0.2.3",
+    "react": "^15.4.2",
+    "react-addons-create-fragment": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "scripts": {
+    "build": "yarn build:clean && yarn build:transpile && yarn build:copy",
+    "build:clean": "rm -rf lib",
+    "build:transpile": "babel src --out-dir lib --ignore spec.js,spec.jsx",
+    "build:copy": "cp src/index.d.ts lib/index.d.ts",
+    "lint": "eslint --ext js,jsx src/",
+    "gh-pages:build": "build-storybook -o _gh-pages",
+    "gh-pages": "yarn run gh-pages:build",
+    "prepublish": "yarn lint && yarn test && yarn build",
+    "storybook": "start-storybook -p 6006",
+    "test": "jest"
+  },
+  "jest": {
+    "automock": true,
+    "moduleFileExtensions": [
+      "jsx",
+      "js"
+    ],
+    "notify": true,
+    "testRegex": "spec.jsx?$",
+    "unmockedModulePathPatterns": [
+      "enzyme",
+      "react"
+    ]
+  },
+  "types": "./lib/index.d.ts"
+}

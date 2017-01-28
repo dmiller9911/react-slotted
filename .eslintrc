@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "jasmine": true
+  },
+  "globals": {
+    "jest": true
+  },
+  "rules": {
+    "import/first": 0,
+    "import/no-extraneous-dependencies": 0
+  }
+}
