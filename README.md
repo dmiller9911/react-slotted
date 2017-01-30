@@ -1,4 +1,4 @@
-# react-slotted
+# react-slotted [![Build Status](https://travis-ci.org/dmiller9911/react-slotted.svg?branch=master)](https://travis-ci.org/dmiller9911/react-slotted)
 A React implementation of slots.
 
 One thing seems to come up in articles/posts about why developers choose Vue over React is `slots`. From google's webcomponent docs. "Slots are placeholders inside your component that users can fill with their own markup."  React doesn't technically have this by default, although you could just provide it as a prop.  This lib was created to show that React may not be a "all in one", but it can be made to cover any of your use cases.
